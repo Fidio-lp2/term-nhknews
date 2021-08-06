@@ -1,1 +1,6 @@
 #!/Users/fidio/.pyenv/shims/python
+
+import term-nhknews
+
+if __name__=="__main__":
+    term-nhknews.main()
