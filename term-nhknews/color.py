@@ -36,25 +36,47 @@ RESET: Final[str] = '\033[0m'           # All reset
 def options(text: str, bold: bool, line: bool, \
             invisible: bool, reverce: bool) -> str:
     if bold:
-        text = BOLD + text
+        text = BOLD + text + RESET
     if line:
-        text = UNDERLINE + text
+        text = UNDERLINE + text + RESET
     if invisible:
-        text = INVISIBLE + text
+        text = INVISIBLE + text + RESET
     if reverce:
         text = REVERCE
 
     return text
     
 
-def black(text: str, *, bold: bool = False, line: bool = False, \
+def black(text: str, bold: bool = False, line: bool = False, \
             invisible: bool = False, reverce: bool = False) -> str:
-
     return BLACK + options(text, bold, line, invisible, reverce) + RESET
 
-def red(text: str) -> str:
-    return RED + text + RESET
+def red(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return RED + options(text, bold, line, invisible, reverce) + RESET
 
-def green(text: str) -> str:
-    return GREEN + text + RESET
+def green(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return GREEN + options(text, bold, line, invisible, reverce) + RESET
+
+def yellow(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return YELLOW + options(text, bold, line, invisible, reverce) + RESET
+
+def blue(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return BLUE + options(text, bold, line, invisible, reverce) + RESET
+
+def magenta(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return MAGENTA + options(text, bold, line, invisible, reverce) + RESET
+
+def cyan(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return CYAN + options(text, bold, line, invisible, reverce) + RESET
+
+def white(text: str, bold: bool = False, line: bool = False, \
+            invisible: bool = False, reverce: bool = False) -> str:
+    return WHITE + options(text, bold, line, invisible, reverce) + RESET
+
 
