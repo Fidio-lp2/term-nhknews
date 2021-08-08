@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from typing import Final
-
+from typing import (
+    Final,
+    Callable
+)
 
 # fg
 BLACK: Final[str] = '\033[30m'          # Black
@@ -45,8 +47,9 @@ def options(text: str, bold: bool, line: bool, \
         text = REVERCE
 
     return text
-    
 
+
+# the text color functions
 def black(text: str, bold: bool = False, line: bool = False, \
             invisible: bool = False, reverce: bool = False) -> str:
     return BLACK + options(text, bold, line, invisible, reverce) + RESET
@@ -79,4 +82,75 @@ def white(text: str, bold: bool = False, line: bool = False, \
             invisible: bool = False, reverce: bool = False) -> str:
     return WHITE + options(text, bold, line, invisible, reverce) + RESET
 
+# back ground color functions
+def bgblack(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_BLACK + arg + RESET
+    else:
+        result = BG_BLACK + arg() + RESET
 
+    return result
+
+def bgred(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_RED + arg + RESET
+    else:
+        result = BG_RED + arg() + RESET
+
+    return result
+
+def bggreen(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_GREEN + arg + RESET
+    else:
+        result = BG_GREEN + arg() + RESET
+
+    return result
+
+def bgyellow(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_YELLOW + arg + RESET
+    else:
+        result = BG_YELLOW + arg() + RESET
+
+    return result
+
+def bgblue(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_BLUE + arg + RESET
+    else:
+        result = BG_BLUE + arg() + RESET
+
+    return result
+
+def bgmagenta(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_MAGENTA + arg + RESET
+    else:
+        result = BG_MAGENTA + arg() + RESET
+
+    return result
+
+def bgcyan(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_CYAN + arg + RESET
+    else:
+        result = BG_CYAN + arg() + RESET
+
+    return result
+
+def bgwhite(arg):
+    result: str = ""
+    if type(arg) is str:
+        result = BG_WHITE + arg + RESET
+    else:
+        result = BG_WHITE + arg() + RESET
+
+    return result
