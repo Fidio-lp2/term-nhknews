@@ -1,0 +1,11 @@
+{
+    "main" : "https://www.nhk.or.jp/rss/news/cat0.xml",
+    "society" : "https://www.nhk.or.jp/rss/news/cat1.xml",
+    "chemotherapy" : "https://www.nhk.or.jp/rss/news/cat3.xml",
+    "politics" : "https://www.nhk.or.jp/rss/news/cat4.xml",
+    "economy" : "https://www.nhk.or.jp/rss/news/cat5.xml",
+    "international" : "https://www.nhk.or.jp/rss/news/cat6.xml",
+    "sports" : "https://www.nhk.or.jp/rss/news/cat7.xml",
+    "culture" : "https://www.nhk.or.jp/rss/news/cat2.xml",
+    "live" : "https://www.nhk.or.jp/rss/news/cat-live.xml"
+}

@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Color the output text
 
-from typing import (
-    Final,
-    Callable
-)
+"""
+
+from typing import Final
 
 # fg
 BLACK: Final[str] = '\033[30m'          # Black
@@ -20,7 +21,8 @@ COLOR_DEFAULT: Final[str] = '\033[39m'  # Return to default the text color
 BOLD: Final[str] = '\033[1m'            # Bold
 UNDERLINE: Final[str] = '\033[4m'       # Under line
 INVISIBLE: Final[str] = '\033[08m'      # Invisible
-REVERCE: Final[str] = '\033[07m'        # Reverse the text color and back ground color
+REVERCE: Final[str] = '\033[07m'
+# Reverse the text color and back ground color
 
 # bg
 BG_BLACK: Final[str] = '\033[40m'       # Black
@@ -31,12 +33,16 @@ BG_BLUE: Final[str] = '\033[44m'        # Blue
 BG_MAGENTA: Final[str] = '\033[45m'     # Magenta
 BG_CYAN: Final[str] = '\033[46m'        # Cyan
 BG_WHITE: Final[str] = '\033[47m'       # White
-BG_DEFAULT: Final[str] = '\033[49m'      # Return to default back ground color
+BG_DEFAULT: Final[str] = '\033[49m'
+# Return to default back ground color
 
 RESET: Final[str] = '\033[0m'           # All reset
 
 def options(text: str, bold: bool, line: bool, \
             invisible: bool, reverce: bool) -> str:
+    """
+    
+    """
     if bold:
         text = BOLD + text + RESET
     if line:
