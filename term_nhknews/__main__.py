@@ -1,6 +1,8 @@
-#!/Users/fidio/.pyenv/shims/python
 # -*- coding: utf-8 -*-
+"""
+main script
 
+"""
 import json
 from typing import (
     Final,
@@ -8,8 +10,8 @@ from typing import (
 )
 import argparse
 import feedparser
-from term_nhknews.util import inves_app_path
-from term_nhknews.color import *
+from util import inves_app_path
+from color import *
 
 
 def main():
@@ -55,6 +57,3 @@ def main():
             print()
         if int(args.number) <= i:
             break
-
-if __name__ == "__main__":
-    main()
