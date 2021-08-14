@@ -24,11 +24,18 @@ def _real_main():
                         help="You can choose the news type which you want.\
                         can choose 'main', 'society', 'chemotherapy', \
                         'politics', 'economy', 'international', \
-                        'sports', 'culture', 'live'."
-                        )
+                        'sports', 'culture', 'live'.",
+                        type=str)
     parser.add_argument('-n', "--number", default=7,
-                        help="You can st the number of news \
-                        that you want know.")
+                        help="You can set the number of news \
+                        that you want know.",
+                        type=int)
+    parser.add_argument('-a', "--all", action="store_true",
+                        help="Show you the all news",
+                        )
+    parser.add_argument('-s', "--search", default='',
+                        help="You can search article including specific word.",
+                        type=str)
 
     args = parser.parse_args()
 
@@ -36,23 +43,28 @@ def _real_main():
     feed = parse_data["feed"]
     entries = parse_data["entries"]
 
+    if args.all:
+        args.number = len(entries)
+
     news_num: str = str(args.number) \
-        if int(args.number) <= len(entries) else str(len(entries))
+        if args.number <= len(entries) else str(len(entries))
 
     print(blue("-*- " + feed["title"]) + ' ' + \
         cyan(feed["updated"][:-6]) + ' ' + \
         cyan('[' + news_num + '/' + \
-        str(len(entries)) + ']' + " -*-"))
-    i: int = 0
-    for entry in entries:
-        print(magenta('▸ ') + white(str(entry.title)))
-        print(green(entry.summary))
-        print(yellow(entry.link))
-        i += 1
-        if int(args.number) > i:
-            print()
-        if int(args.number) <= i:
-            break
+        str(len(entries)) + ']') + blue(" -*-"))
+
+    if not args.all:
+        i: int = 0
+        for entry in entries:
+            print(magenta('▸ ') + white(str(entry.title)))
+            print(green(entry.summary))
+            print(yellow(entry.link))
+            i += 1
+            if int(args.number) > i:
+                print()
+            if int(args.number) <= i:
+                break
 
 def main():
     _real_main()

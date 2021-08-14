@@ -13,10 +13,12 @@ module:
 term-nhknews -t [type] -n [number]
 ```
 [type]
-You can choose the news vtype which you want. can choose 'main', 'society', 'chemotherapy', 'politics', 'economy', 'international', 'sports', 'culture', 'live'.
+You can choose the news vtype which you want. can choose 'main', 'society', 'chemotherapy', 'politics', 'economy', 'international', 'sports', 'culture', 'live'. Default is `main`.
 
 [number]
 You can set the number of news that you want know.
+
+> You can know same content by using `-h` option.
 
 ## Install
 
@@ -30,4 +32,4 @@ and, create a path to `bin` directory in this repository.
 
 ## Author
 
-[this guy](https://github.com/Fidio-lp2)
+[this ikemen guy](https://github.com/Fidio-lp2)
