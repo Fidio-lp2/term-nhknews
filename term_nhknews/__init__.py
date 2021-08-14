@@ -2,6 +2,7 @@
 
 import json
 import argparse
+from re import A
 import feedparser
 from typing import (
     Final,
@@ -9,6 +10,11 @@ from typing import (
 )
 from .color import *
 from .util import *
+
+def print_news(entry):
+    print(magenta('▸ ') + white(str(entry.title)))
+    print(green(entry.summary))
+    print(yellow(entry.link))
 
 def _real_main():
     datapath: str = inves_app_path() + "/urldata.json"
@@ -42,29 +48,37 @@ def _real_main():
     parse_data = feedparser.parse(URL_DATA[args.type])
     feed = parse_data["feed"]
     entries = parse_data["entries"]
+    entry_num = len(entries)
 
-    if args.all:
-        args.number = len(entries)
+    if args.all or args.search != '':
+        args.number = entry_num
 
     news_num: str = str(args.number) \
-        if args.number <= len(entries) else str(len(entries))
+        if args.number <= entry_num else str(entry_num)
 
     print(blue("-*- " + feed["title"]) + ' ' + \
         cyan(feed["updated"][:-6]) + ' ' + \
-        cyan('[' + news_num + '/' + \
-        str(len(entries)) + ']') + blue(" -*-"))
+        cyan('[' + str(news_num) + '/' + \
+        str(entry_num) + ']') + blue(" -*-"))
 
-    if not args.all:
+    if args.search == '':
         i: int = 0
         for entry in entries:
-            print(magenta('▸ ') + white(str(entry.title)))
-            print(green(entry.summary))
-            print(yellow(entry.link))
+            print_news(entry)
             i += 1
-            if int(args.number) > i:
+            if args.number > i:
                 print()
-            if int(args.number) <= i:
+            else:
                 break
+    else:
+        i: int = 0
+        print_yet: bool = False
+        for entry in entries:
+            if args.search in entry.summary + entry.link:
+                if print_yet:
+                    print()
+                print_news(entry)
+                print_yet = True
 
 def main():
     _real_main()
