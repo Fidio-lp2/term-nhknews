@@ -30,4 +30,4 @@ and, create a path to `bin` directory in this repository.
 
 ## Author
 
-[Author](https://github.com/Fidio-lp2)
+[this guy](https://github.com/Fidio-lp2)
