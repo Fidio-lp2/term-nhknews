@@ -2,7 +2,6 @@
 
 import json
 import argparse
-from re import A
 import feedparser
 from typing import (
     Final,
