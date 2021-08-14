@@ -1,10 +1,10 @@
 # term-nhknews
 
-If you use this app, you can know easily social situation on **command line❗️
+If you use this app, you can know easily social situation on **command line❗️**
 
 ## Requirement
 
-**module:
+module:
 `feedparser`
 
 ## Usage
@@ -19,7 +19,7 @@ You can choose the news vtype which you want. can choose 'main', 'society', 'che
 You can set the number of news that you want know.
 
 ## Install
-**
+
 To install with git,
 
 ```
@@ -30,4 +30,4 @@ and, create a path to `bin` directory in this repository.
 
 ## Author
 
-[Author]("https://github.com/Fidio-lp2")
+[Author](https://github.com/Fidio-lp2)
