@@ -26,7 +26,7 @@ You can set the number of news that you want know. Default value is `7`.
 Show the all articles.
 
 [search]
-You acn search article including specific word.
+You can search article including specific word.
 
 [h]
 You can know same content by using `-h` option.
