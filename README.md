@@ -2,7 +2,9 @@
 
 If you use this app, you can know easily social situation on **command line❗️**
 
-![icon](icon.png)
+![size](icons/size-icon.svg)
+
+![icon](icons/icon.png)
 
 ## Requirement
 
